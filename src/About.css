@@ -1,0 +1,79 @@
+/* General page structure */
+.about-page {
+  padding: 20px;
+  margin-top: 80px; /* Ensure space below the navbar */
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Cards styling */
+.about-section {
+  display: flex;
+  flex-direction: column; /* Ensures the cards are displayed in a column, one below the other */
+  gap: 20px; /* Space between the cards */
+  align-items: center; /* Center the cards horizontally */
+}
+
+.about-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 700px; /* Maximum width for larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth animation */
+}
+
+.about-card h2 {
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  color: #555;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Hover effect */
+.about-card:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  background-color: #e9e9e9; /* Slight background color change */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-card {
+      width: 90%; /* Reduce card width on smaller screens */
+      padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .about-title {
+      font-size: 2rem; /* Slightly smaller title on mobile */
+  }
+
+  .about-card p {
+      font-size: 1rem; /* Adjust paragraph size for readability on smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+      font-size: 1.5rem; /* Further reduce title size on very small screens */
+  }
+
+  .about-card p {
+      font-size: 0.9rem; /* Further adjust paragraph size for mobile */
+  }
+}

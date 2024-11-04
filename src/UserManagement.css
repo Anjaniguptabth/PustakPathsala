@@ -1,0 +1,206 @@
+/* Full Page Style */
+html, body {
+    height: 100%;  /* Ensure body takes full height */
+    margin: 0;     /* Remove default margin */
+}
+
+
+/* Container */
+.user-management-container {
+    padding: 20px;
+    width: 90%;  /* Full width for the container */
+    max-width: 1200px; /* Optional: set a max width for the container */
+    height: calc(100vh - 40px); /* Adjust height to fill the screen */
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    display: flex;      /* Use flexbox for full height alignment */
+    flex-direction: column;  /* Align items vertically */
+    overflow: hidden;  /* Prevent overflow */
+    margin-top: 60px; /* Adjust for navbar height */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;  /* Full width of the container */
+    max-width: 300px;  /* Optional max-width for input */
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* User Table */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Adjusted to create space below the search bar */
+    flex-grow: 1; /* Allow table to grow and take remaining space */
+    max-height: 100px; /* Set a max height for the table to keep it compact */
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds max height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.user-table th, .user-table td {
+    padding: 8px;  /* Increased padding for better readability */
+    border: 1px solid #ddd;
+    text-align: center;
+    height: 40px; /* Set a fixed height for table rows for consistency */
+}
+
+.user-table th {
+    color: white;
+    font-weight: bold;
+    background-color: #007bff;
+}
+
+.user-table td button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 8px; /* Reduced padding for buttons */
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.user-table td button:hover {
+    background-color: #c82333;
+}
+
+/* Delete Confirmation Popup */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Use full width for the modal */
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.modal-button.confirm {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-button.confirm:hover {
+    background-color: #0056b3;
+}
+
+.modal-button.cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.modal-button.cancel:hover {
+    background-color: #5a6268;
+}
+
+/* No Users Found Message */
+.no-users-message {
+    position: absolute; /* Make it cover the full view */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.no-users-message h3 {
+    font-size: 24px; /* Default font size */
+    color: #333; /* Darker color for readability */
+    text-align: center; /* Center the text */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Responsive font size */
+@media (max-width: 768px) {
+    .no-users-message {
+        font-size: 20px;           /* Decrease font size on smaller screens */
+        padding: 15px;             /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .no-users-message {
+        font-size: 18px;           /* Further decrease font size on very small screens */
+        padding: 10px;             /* Adjust padding for very small screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-table th, .user-table td {
+        padding: 6px;              /* Slightly adjust padding for smaller screens */
+        height: 35px;              /* Adjust height for smaller screens */
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar input[type="text"], .search-bar button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .modal-container {
+        width: 90%;
+    }
+}
